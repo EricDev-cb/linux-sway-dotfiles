@@ -17,6 +17,6 @@ Minimalist Wayland desktop configuration built around Sway.
 * **Terminal:** Kitty
 * **Prompt:** Starship
 * **Launcher:** Rofi
-* **Editor:** LunarVim (`Nvchat`)
+* **Editor:** LunarVim (`Nvchad`)
 * **Wallpaper:** Waypaper
 * **Logout Menu:** Wlogout
