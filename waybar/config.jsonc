@@ -1,0 +1,174 @@
+{
+    "layer": "top",
+    "position": "top",
+    "margin-top": 8,
+    "margin-left": 12,
+    "margin-right": 12,
+    "spacing": 8,
+
+    "modules-left": [
+        "sway/workspaces",
+        "sway/mode",
+        "sway/window"
+    ],
+    "modules-center": [
+        "clock",
+        "mpris"
+    ],
+    "modules-right": [
+        "cpu",
+        "memory",
+        "temperature",
+        "disk",
+        "pulseaudio",
+        "backlight",
+        "network",
+        "battery",
+        "idle_inhibitor",
+        "tray",
+        "custom/lock",
+        "custom/power"
+    ],
+
+    // ========================
+    // Módulos da Esquerda
+    // ========================
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{name}",
+        "sort-by-id": true
+    },
+
+    "sway/mode": {
+        "format": "󰩨 {}",
+        "max-length": 30
+    },
+
+    "sway/window": {
+        "format": "󰖯 {title}",
+        "max-length": 35,
+        "rewrite": {
+            "(.*) — Mozilla Firefox": "󰈹 $1",
+            "(.*) - Visual Studio Code": "󰨞 $1",
+            "(.*) - Foot": " $1"
+        }
+    },
+
+    // ========================
+    // Módulos do Centro
+    // ========================
+    "clock": {
+        "format": "󰥔 {:%a, %b %d  %I:%M %p}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+
+    "mpris": {
+        "format": "{player_icon} {title}",
+        "format-paused": "{status_icon} <i>{title}</i>",
+        "max-length": 28,
+        "player-icons": {
+            "default": "󰎈",
+            "spotify": "󰓇",
+            "firefox": "󰈹"
+        },
+        "status-icons": {
+            "paused": "󰏤"
+        }
+    },
+
+    // ========================
+    // Módulos da Direita
+    // ========================
+    "cpu": {
+        "format": "󰻠 {usage}%",
+        "interval": 3
+    },
+
+    "memory": {
+        "format": "󰍛 {used:0.1f}G",
+        "tooltip-format": "{used:0.2f}G / {total:0.1f}G ({percentage}%)",
+        "interval": 3
+    },
+
+    "temperature": {
+        "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
+        "critical-threshold": 80,
+        "format": "󰔏 {temperatureC}°C",
+        "format-critical": "󰸁 {temperatureC}°C"
+    },
+
+    "disk": {
+        "interval": 30,
+        "format": "󰋊 {percentage_used}%",
+        "path": "/",
+        "tooltip-format": "{used} / {total} ({percentage_used}%)"
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "{icon} {volume}% 󰂯",
+        "format-muted": "󰖁 Muted",
+        "format-icons": {
+            "headphone": "󰋋",
+            "hands-free": "󰋋",
+            "headset": "󰋋",
+            "phone": "󰏲",
+            "portable": "󰏲",
+            "car": "󰄋",
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "on-click": "pavucontrol"
+    },
+
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": ["󰃞", "󰃟", "󰃠"]
+    },
+
+    "network": {
+        "format-wifi": "󰤨 {essid}",
+        "format-ethernet": "󰈀 Cabo",
+        "format-disconnected": "󰤭 Offline",
+        "max-length": 15,
+        "tooltip-format": "{ifname}: {ipaddr}/{cidr} via {gwaddr}"
+    },
+
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󰚥 {capacity}%",
+        "format-icons": ["󰁺", "󰁼", "󰁾", "󰂀", "󰁹"]
+    },
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "󰅶",
+            "deactivated": "󰾪"
+        },
+        "tooltip-format-activated": "Modo café ativo (tela não suspende)",
+        "tooltip-format-deactivated": "Suspensão automática normal"
+    },
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 8
+    },
+
+    "custom/lock": {
+        "format": "󰌾",
+        "on-click": "hyprlock",
+        "tooltip": false
+    },
+
+    "custom/power": {
+        "format": "󰐥",
+        "on-click": "wlogout || wlogout-script",
+        "tooltip": false
+    }
+}

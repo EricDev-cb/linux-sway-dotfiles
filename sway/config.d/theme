@@ -1,0 +1,98 @@
+#A   pply gtk theming
+exec_always ~/.config/sway/scripts/import-gsettings
+ 
+# =========================
+# SwayFX
+# =========================
+animation_duration_ms 290
+corner_radius 10
+# shadow_blur_radius 12
+# shadow_offset 0 4
+shadows off
+# shadow_color #00000040
+blur off
+# blur_passes 1
+# blur_radius 1
+# default_dim_inactive 0.25
+#for_window [app_id="foot"] opacity 0.95
+# for_window [class="Firefox"] opacity 0.95
+exec sway-auto-op -o 0.85
+# for_window [app_id=".*"] opacity 0.95
+# for_window [class=".*"] opacity 0.95
+
+exec wlsunset -t 5000
+
+#SunLight
+# exec_always wlsunset -t 4800
+
+# cursor icon
+set $cursor_theme "rio-tsukatsuki-cursors"
+set $cursor_size 24
+
+seat * xcursor_theme $cursor_theme $cursor_size
+
+# Gaps entre janelas
+gaps inner 5
+gaps outer 6
+
+# Bordas
+default_border pixel 2
+default_floating_border pixel 2
+
+# Não esconder bordas
+hide_edge_borders none
+
+# Fonte
+font pango:JetBrainsMono Nerd Font 10
+
+# Bordas inteligentes
+smart_borders off
+
+
+
+# =========================
+# Window Titles
+# =========================
+
+for_window [shell="xdg_shell"] title_format "%title"
+for_window [shell="x_wayland"] title_format "%class"
+
+
+# =========================
+# Forest / Everforest Colors
+# =========================
+
+# class                 border    background text       indicator child_border
+
+client.urgent           #e67e80   #2d353b    #e67e80    #e67e80   #e67e80
+client.focused          #a7c080   #a7c080    #2d353b    #83c092   #a7c080
+client.focused_inactive #4f585e   #3d484d    #d3c6aa    #4f585e   #4f585e
+client.unfocused        #343f44   #2d353b    #859289    #343f44   #343f44
+
+# =========================
+# Floating Windows
+# =========================
+
+floating_modifier Mod4
+
+# =========================
+# Animations fake/smooth feel
+# =========================
+
+focus_follows_mouse yes
+mouse_warping none
+
+# =========================
+# Status Bar
+# =========================
+
+# =========================
+# Wallpaper
+# =========================
+
+# exec swaybg -i $HOME/Documentos/wallpapers/shougan_castle.png -m fill &
+
+# =========================
+# NIRI + SWAYFX
+# =========================
+# exec noctalia

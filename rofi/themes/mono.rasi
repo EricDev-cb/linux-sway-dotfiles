@@ -1,0 +1,299 @@
+/** =========================================================
+ *  FOREST LAUNCHER (Everforest Theme)
+ *  Sólido / Minimalista / Floresta
+ * ========================================================= */
+
+/** ==== Font ==== **/
+@import "assets/fonts.rasi"
+
+
+/** ==== Palette ==== **/
+
+* {
+    bg:             #2d353b;
+    bg-alt:         #343f44;
+    bg-selected:    #4f585e;
+
+    fg:             #d3c6aa;
+    fg-muted:       #859289;
+    fg-bright:      #a7c080;
+
+    border-color:   #a7c080;
+}
+
+
+/** =========================================================
+ *  CONFIGURATION
+ * ========================================================= */
+
+configuration {
+    modi:                   "drun,window";
+    show-icons:             true;
+
+    /* Nomes e ícones para cada seção */
+    display-drun:           "🚀 Apps";
+    display-window:         "🪟 Windows";
+    display-clipboard:      "📋 Clipboard";
+    display-power:          "🔋 Power";
+    display-network:        "📶 Network";
+    display-audio:          "🔊 Audio";
+    display-search:         "🔎 Search";
+    display-themes:         "🎨 Themes";
+    display-settings:       "⚙️ Settings";
+
+    drun-display-format:    "{name}";
+
+    kb-row-up:              "Up";
+    kb-row-down:            "Down";
+}
+
+
+/** =========================================================
+ *  WINDOW
+ * ========================================================= */
+
+window {
+    location:               center;
+    anchor:                 center;
+
+    fullscreen:             false;
+
+    width:                  520px;
+    height:                 430px;
+
+    margin:                 0px;
+    padding:                0px;
+
+    border:                 1px;
+    border-color:           @border-color;
+
+    border-radius:          14px;
+
+    background-color:       @bg;
+
+    cursor:                 "default";
+}
+
+
+/** =========================================================
+ *  MAIN BOX
+ * ========================================================= */
+
+mainbox {
+    enabled:                true;
+
+    spacing:                12px;
+
+    margin:                 0px;
+    padding:                14px;
+
+    border:                 0px;
+
+    background-color:       @bg;
+
+    children:               [
+        "inputbar",
+        "listview"
+    ];
+}
+
+
+/** =========================================================
+ *  SEARCH BAR
+ * ========================================================= */
+
+inputbar {
+    enabled:                true;
+
+    spacing:                10px;
+
+    margin:                 0px;
+    padding:                12px;
+
+    border:                 1px;
+    border-color:           @border-color;
+    border-radius:          9px;
+
+    background-color:       @bg-alt;
+
+    text-color:             @fg-bright;
+
+    children:               [
+        "prompt",
+        "entry"
+    ];
+}
+
+
+prompt {
+    enabled:                true;
+
+    background-color:       transparent;
+
+    text-color:             @fg-muted;
+}
+
+
+textbox-prompt-colon {
+    enabled:                false;
+}
+
+
+entry {
+    enabled:                true;
+
+    background-color:       transparent;
+
+    text-color:             @fg-bright;
+
+    cursor:                 text;
+
+    placeholder:            "Search applications";
+    placeholder-color:      @fg-muted;
+}
+
+
+/** =========================================================
+ *  LIST
+ * ========================================================= */
+
+listview {
+    enabled:                true;
+
+    columns:                1;
+    lines:                  7;
+
+    cycle:                  true;
+    dynamic:                true;
+
+    scrollbar:              false;
+
+    layout:                 vertical;
+    reverse:                false;
+
+    fixed-height:           true;
+    fixed-columns:          true;
+
+    spacing:                4px;
+
+    margin:                 0px;
+    padding:                0px;
+
+    border:                 0px;
+
+    background-color:       transparent;
+
+    text-color:             @fg;
+}
+
+
+/** =========================================================
+ *  ELEMENT
+ * ========================================================= */
+
+element {
+    enabled:                true;
+
+    spacing:                12px;
+
+    margin:                 0px;
+    padding:                9px 12px;
+
+    border:                 0px;
+
+    border-radius:          8px;
+
+    background-color:       transparent;
+
+    text-color:             @fg;
+
+    cursor:                 pointer;
+}
+
+
+/** ==== Normal ==== **/
+
+element normal.normal {
+    background-color:       transparent;
+    text-color:             @fg;
+}
+
+
+/** ==== Selected ==== **/
+
+element selected.normal {
+    background-color:       @bg-selected;
+
+    text-color:             @fg-bright;
+}
+
+
+/** =========================================================
+ *  ICON
+ * ========================================================= */
+
+element-icon {
+    enabled:                true;
+
+    size:                   28px;
+
+    background-color:       transparent;
+
+    text-color:             inherit;
+
+    cursor:                 inherit;
+}
+
+
+/** =========================================================
+ *  TEXT
+ * ========================================================= */
+
+element-text {
+    enabled:                true;
+
+    background-color:       transparent;
+
+    text-color:             inherit;
+
+    highlight:              inherit;
+
+    horizontal-align:       0.0;
+    vertical-align:         0.5;
+
+    cursor:                 inherit;
+}
+
+
+/** =========================================================
+ *  ERROR MESSAGE
+ * ========================================================= */
+
+error-message {
+    padding:                15px;
+
+    border:                 1px;
+    border-color:           @border-color;
+
+    border-radius:          9px;
+
+    background-color:       @bg-alt;
+
+    text-color:             @fg;
+}
+
+
+/** =========================================================
+ *  TEXTBOX
+ * ========================================================= */
+
+textbox {
+    background-color:       transparent;
+
+    text-color:             @fg;
+
+    horizontal-align:       0.0;
+    vertical-align:         0.5;
+
+    highlight:              none;
+}

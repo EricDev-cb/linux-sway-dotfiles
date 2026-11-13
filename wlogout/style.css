@@ -1,0 +1,68 @@
+* {
+    background-image: none;
+    box-shadow: none;
+}
+
+window {
+    background-color: rgba(45, 53, 59, 0.88); /* #2d353b com transparência */
+    font-family: "JetBrainsMono Nerd Font", "FiraCode Nerd Font", sans-serif;
+    font-size: 14pt;
+}
+
+button {
+    color: #d3c6aa; /* Creme suave */
+    background-color: #343f44; /* Verde-ardósia escuro */
+    border: 2px solid #4f585e; /* Borda discreta inativa */
+    border-radius: 16px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25%;
+    margin: 10px;
+    transition: box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+button:focus, button:active, button:hover {
+    background-color: #3d484d;
+    color: #a7c080; /* Verde folha */
+    border-color: #a7c080;
+    box-shadow: 0 0 15px rgba(167, 192, 128, 0.35);
+}
+
+/* Destaque coral no botão de desligar ao focar/passar o mouse */
+#shutdown:focus, #shutdown:active, #shutdown:hover {
+    color: #e67e80;
+    border-color: #e67e80;
+    box-shadow: 0 0 15px rgba(230, 126, 128, 0.35);
+}
+
+/* Destaque ocre no botão de reiniciar ao focar/passar o mouse */
+#reboot:focus, #reboot:active, #reboot:hover {
+    color: #dbbc7f;
+    border-color: #dbbc7f;
+    box-shadow: 0 0 15px rgba(219, 188, 127, 0.35);
+}
+
+/* Ícones padrão do sistema */
+#lock {
+    background-image: image(url("/usr/share/wlogout/icons/lock.png"));
+}
+
+#logout {
+    background-image: image(url("/usr/share/wlogout/icons/logout.png"));
+}
+
+#suspend {
+    background-image: image(url("/usr/share/wlogout/icons/suspend.png"));
+}
+
+#shutdown {
+    background-image: image(url("/usr/share/wlogout/icons/shutdown.png"));
+}
+
+#reboot {
+    background-image: image(url("/usr/share/wlogout/icons/reboot.png"));
+}
+
+#hibernate {
+    background-image: image(url("/usr/share/wlogout/icons/hibernate.png"));
+}

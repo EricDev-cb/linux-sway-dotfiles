@@ -1,0 +1,153 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: transparent;
+    color: #d3c6aa;
+}
+
+/* Remove o fundo dos grupos maiores para criar ilhas individuais */
+.modules-left, .modules-center, .modules-right {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+
+/* Estilo Base das Ilhas / Pílulas */
+#workspaces,
+#mode,
+#window,
+#clock,
+#mpris,
+#cpu,
+#memory,
+#temperature,
+#disk,
+#pulseaudio,
+#backlight,
+#network,
+#battery,
+#idle_inhibitor,
+#tray,
+#custom-lock,
+#custom-power {
+    background-color: rgba(45, 53, 59, 0.92);
+    border: 1px solid #a7c080;
+    border-radius: 16px;
+    padding: 2px 12px;
+    color: #d3c6aa;
+}
+
+/* Esconde a pílula da janela se não houver janela focada */
+window#waybar.empty #window {
+    background-color: transparent;
+    border: none;
+}
+
+/* Workspaces Dinâmicos */
+#workspaces {
+    padding: 2px 6px;
+}
+
+#workspaces button {
+    padding: 0 8px;
+    color: #859289;
+    border-radius: 12px;
+    margin: 2px 2px;
+    transition: all 0.2s ease-in-out;
+}
+
+#workspaces button.focused,
+#workspaces button.active {
+    color: #2d353b;
+    background-color: #a7c080;
+    font-weight: bold;
+}
+
+#workspaces button.urgent {
+    background-color: #e67e80;
+    color: #2d353b;
+}
+
+#workspaces button:hover {
+    background-color: rgba(167, 192, 128, 0.2);
+    color: #d3c6aa;
+}
+
+/* Destaque para Modo Sway (ex: Resize) */
+#mode {
+    background-color: #dbbc7f;
+    color: #2d353b;
+    font-weight: bold;
+    border-color: #dbbc7f;
+}
+
+/* Cores sutis por categoria nas ilhas */
+#clock {
+    font-weight: bold;
+    color: #a7c080;
+}
+
+#mpris {
+    color: #83c092;
+}
+
+#cpu { color: #83c092; }
+#memory { color: #d3c6aa; }
+#temperature { color: #dbbc7f; }
+#disk { color: #a7c080; }
+
+#temperature.critical,
+#battery.critical {
+    color: #2d353b;
+    background-color: #e67e80;
+    border-color: #e67e80;
+}
+
+#battery.warning {
+    color: #dbbc7f;
+    border-color: #dbbc7f;
+}
+
+#battery.charging {
+    color: #a7c080;
+}
+
+#network.disconnected {
+    color: #859289;
+    border-color: #4f585e;
+}
+
+#idle_inhibitor.activated {
+    background-color: #dbbc7f;
+    color: #2d353b;
+    border-color: #dbbc7f;
+}
+
+/* Botões de Ação */
+#custom-lock, #custom-power {
+    padding: 2px 10px;
+}
+
+#custom-lock {
+    color: #83c092;
+}
+
+#custom-power {
+    color: #e67e80;
+}
+
+#custom-lock:hover {
+    background-color: #83c092;
+    color: #2d353b;
+}
+
+#custom-power:hover {
+    background-color: #e67e80;
+    color: #2d353b;
+}

@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# Localiza automaticamente o LED Scroll Lock
+shopt -s nullglob
+leds=(/sys/class/leds/*::scrolllock)
+
+if (( ${#leds[@]} == 0 )); then
+    echo "Nenhum LED Scroll Lock encontrado."
+    exit 1
+fi
+
+# Extrai o nome do dispositivo, sem o caminho
+led="${leds[0]##*/}"
+
+# Liga o LED
+brightnessctl --device="$led" set 1
