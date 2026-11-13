@@ -6,8 +6,9 @@ Minimalist Wayland desktop configuration built around Sway.
 
 ![Desktop Overview](screenshots/print_1.png)
 
-
 ![Rofi](screenshots/pint_2.png)
+
+![Nvchad](screenshots/pint_3.png)
 
 ## Components
 
@@ -16,6 +17,6 @@ Minimalist Wayland desktop configuration built around Sway.
 * **Terminal:** Kitty
 * **Prompt:** Starship
 * **Launcher:** Rofi
-* **Editor:** LunarVim (`lvim`)
+* **Editor:** LunarVim (`Nvchat`)
 * **Wallpaper:** Waypaper
 * **Logout Menu:** Wlogout
