@@ -8,7 +8,7 @@ Minimalist Wayland desktop configuration built around Sway.
 
 ![Rofi](screenshots/pint_2.png)
 
-![Nvchad](screenshots/pint_3.png)
+![Nvchad](screenshots/print_3.png)
 
 ## Components
 
